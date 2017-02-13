@@ -12,3 +12,9 @@ gulp.task('jsBrowserify', function() {
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
 });
+
+gulp.task('concatInterface', function() {
+  return gulp.src(['./js/*-interface.js'])
+    .pipe(concat('allConcat.js'))
+    .pipe(gulp.dest('./tmp'));
+});
